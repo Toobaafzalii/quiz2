@@ -1,101 +1,133 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import { useRouter } from "next/navigation";
+import ScreenShotThree from "../public/Screenshot3.png";
+import ScreenShotTwo from "../public/Screenshot2.png";
+import ScreenShotOne from "../public/Screenshot1.png";
+
+export default function Landing() {
+  const router = useRouter();
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <>
+      {/* <Navbar transparent /> */}
+      <main>
+        <div
+          className="relative pt-16 mt-2 pb-32 flex content-center items-center justify-center"
+          style={{
+            minHeight: "75vh",
+          }}
+        >
+          <div
+            className="absolute top-0 w-full h-full min-h-[75vh] bg-center bg-cover bg-indigo-100"
+            style={{
+              backgroundImage:
+                "url('https://www.creative-tim.com/learning-lab/tailwind-starter-kit/img/ill_header_3.png')",
+            }}
+          >
+            <span
+              id="blackOverlay"
+              className="w-full h-full absolute opacity-75 bg-gray-950"
+            ></span>
+          </div>
+          <div className="container relative mx-auto">
+            <div className="items-center flex flex-wrap">
+              <div className="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
+                <div className="pr-12">
+                  <h1 className="text-white font-semibold text-5xl">
+                    Your story starts with us.
+                  </h1>
+                  <p className="mt-4 text-lg text-gray-300">
+                    This is a simple example of a Landing Page you can build
+                    using Tailwind Starter Kit. It features multiple CSS
+                    components based on the Tailwindcss design system.
+                  </p>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+                  <button
+                    className="my-10 mx-auto bg-indigo-800 text-white px-3 py-3 rounded-xl w-72 text-2xl text-nowrap font-gray-800 shadow-lg font-semibold col-span-1 lg:col-span-2 hover:bg-indigo-500"
+                    onClick={() => router.push("/posts")}
+                  >
+                    GET STARTED
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden"
+            style={{ height: "5px" }}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <svg
+              className="absolute bottom-0 overflow-hidden"
+              xmlns="http://www.w3.org/2000/svg"
+              preserveAspectRatio="none"
+              version="1.1"
+              viewBox="0 0 2560 100"
+              x="0"
+              y="0"
+            >
+              <polygon
+                className="text-gray-300 fill-current"
+                points="2560 0 2560 100 0 100"
+              ></polygon>
+            </svg>
+          </div>
         </div>
+
+        <section className=" bg-gray-300 -mt-24">
+          <div className="container mx-auto px-4">
+            <div className="flex flex-wrap">
+              <div className="lg:pt-12 pt-6 w-full md:w-4/12 px-4 text-center">
+                <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
+                  {/* <div className="px-4 py-5 flex-auto">
+                    <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-red-400">
+                      <i className="fas fa-award"></i>
+                    </div>
+                    <h6 className="text-xl font-semibold">Awarded Agency</h6>
+                    <p className="mt-2 mb-4 text-gray-600">
+                      Divide details about your product or agency work into
+                      parts. A paragraph describing a feature will be enough.
+                    </p>
+                  </div> */}
+                  <img src={ScreenShotThree.src} />
+                </div>
+              </div>
+
+              <div className="w-full md:w-4/12 px-4 text-center">
+                <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
+                  {/* <div className="px-4 py-5 flex-auto">
+                    <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-blue-400">
+                      <i className="fas fa-retweet"></i>
+                    </div>
+                    <h6 className="text-xl font-semibold">Free Revisions</h6>
+                    <p className="mt-2 mb-4 text-gray-600">
+                      Keep you user engaged by providing meaningful information.
+                      Remember that by this time, the user is curious.
+                    </p>
+                  </div> */}
+                  <img src={ScreenShotOne.src} />
+                </div>
+              </div>
+
+              <div className="pt-6 w-full md:w-4/12 px-4 text-center z-10">
+                <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
+                  {/* <div className="px-4 py-5 flex-auto">
+                    <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-green-400">
+                      <i className="fas fa-fingerprint"></i>
+                    </div>
+                    <h6 className="text-xl font-semibold">Verified Company</h6>
+                    <p className="mt-2 mb-4 text-gray-600">
+                      Write a few lines about each one. A paragraph describing a
+                      feature will be enough. Keep you user engaged!
+                    </p>
+                  </div> */}
+                </div>
+                <img src={ScreenShotTwo.src} />
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      {/* <Footer /> */}
+    </>
   );
 }
